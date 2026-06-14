@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Volunteer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Add Volunteer</h2>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <p style="color:rgb(8, 58, 79);">
+            {{ messages[0] }}
+        </p>
+    {% endif %}
+{% endwith %}
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required>
+
+        <input
+            type="text"
+            name="phone"
+            placeholder="Phone"
+            required>
+
+        <input
+            type="text"
+            name="skills"
+            placeholder="Skills"
+            required>
+
+        <input
+            type="text"
+            name="city"
+            placeholder="City"
+            required>
+
+        <button type="submit">
+            Submit
+        </button>
+
+    </form>
+
+<br>
+
+<a href="/" class="btn">
+    Back to Home
+</a>
+
+<a href="/view" class="btn">
+    View Volunteers
+</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Volunteers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Volunteer Records</h2>
+
+    <table>
+        
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Skills</th>
+            <th>City</th>
+            <th>Action</th>
+        </tr>
+
+        {% for volunteer in volunteers %}
+
+        <tr>
+            <td>{{ volunteer[0] }}</td>
+            <td>{{ volunteer[1] }}</td>
+            <td>{{ volunteer[2] }}</td>
+            <td>{{ volunteer[3] }}</td>
+            <td>{{ volunteer[4] }}</td>
+            <td>{{ volunteer[5] }}</td>
+            <td>
+        <a href="/delete/{{ volunteer[0] }}">
+            Delete
+        </a>
+    </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+<a href="/" class="btn">
+    Back to Home
+</a>
+
+</body>
+</html>
